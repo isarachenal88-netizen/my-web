@@ -211,3 +211,39 @@ footer {
     visibility: hidden;
   }
 }
+.gallery img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.gallery img {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s forwards;
+}
+
+/* automatic delay using nth-child */
+.gallery img:nth-child(1) { animation-delay: 0.2s; }
+.gallery img:nth-child(2) { animation-delay: 0.4s; }
+.gallery img:nth-child(3) { animation-delay: 0.6s; }
+.gallery img:nth-child(4) { animation-delay: 0.8s; }
+.gallery img:nth-child(5) { animation-delay: 1s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
