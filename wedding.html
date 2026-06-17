@@ -7,18 +7,49 @@
 
 <body>
 
+  <body>
+    <div id="welcome-screen">
+  <div class="camera">
+    📸
+  </div>
+  <h1>wedding Photography</h1>
+</div>
 <h1 style="text-align:center; color:red;">Wedding Photography</h1>
 
 <div class="grid">
 
     <img src="wedding1.jpg" width="300">
     <img src="wedding2.jpg" width="300">
+    <img src="wedding3.jpg" width="300">
+    <img src="wedding4.jpg" width="300">
+
 
 </div>
 
 <br>
 <center>
 <a href="index.html" class="card">⬅ Back Home</a>
+<script>
+function filterImages(category) {
+  let images = document.querySelectorAll(".gallery img");
+
+  images.forEach(img => {
+    img.style.opacity = "0";
+    img.style.transform = "scale(0.9)";
+
+    setTimeout(() => {
+      if (category === "all" || img.classList.contains(category)) {
+        img.style.display = "block";
+      } else {
+        img.style.display = "none";
+      }
+
+      img.style.opacity = "1";
+      img.style.transform = "scale(1)";
+    }, 200);
+  });
+}
+</script>
 </center>
 
 </body>

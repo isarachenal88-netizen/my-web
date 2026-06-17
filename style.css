@@ -107,3 +107,107 @@ footer {
     background: red;
     transform: scale(1.05);
 }
+/* FULL SCREEN WELCOME */
+#welcome-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #0f0f0f;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeOutScreen 3.5s forwards;
+}
+
+/* CAMERA ICON */
+.camera {
+  font-size: 80px;
+  animation: bounce 1s infinite;
+}
+
+/* TEXT */
+#welcome-screen h1 {
+  color: #f5c542;
+  margin-top: 20px;
+  font-size: 28px;
+  text-align: center;
+  animation: fadeInText 1.5s ease;
+}
+
+/* CAMERA BOUNCE ANIMATION */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* TEXT FADE */
+@keyframes fadeInText {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* SCREEN DISAPPEAR */
+@keyframes fadeOutScreen {
+  0% { opacity: 1; }
+  80% { opacity: 1; }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+/* FULL SCREEN INTRO */
+#logo-intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #0f0f0f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: screenFade 4s forwards;
+}
+
+/* LOGO TEXT */
+.logo {
+  font-size: 40px;
+  font-weight: bold;
+  color: #f5c542;
+  letter-spacing: 2px;
+  text-align: center;
+  opacity: 0;
+  transform: scale(0.5);
+  animation: logoPop 2s ease forwards;
+}
+
+/* LOGO POP ANIMATION */
+@keyframes logoPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) rotate(-10deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.2) rotate(5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* SCREEN FADE OUT */
+@keyframes screenFade {
+  0% { opacity: 1; }
+  80% { opacity: 1; }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
